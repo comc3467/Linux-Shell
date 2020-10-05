@@ -1,17 +1,3 @@
-# Directions
+In this final project for my Computer Systems Class, I worked with a partner to create a tiny Linux Shell in C++ with program control. All of our work, we completed in tsh.cc, and then we tested the functionality using the trace.txt files. Scoring a 95% on the project, I demonstrated my understanding of child and parent processes, as well as the need for signals and signal handlers to have background and foregrond jobs.
 
-Full directions are in the [lab writeup file, shlab.pdf](shlab.pdf)
-
-# Using GDB to debug your shell lab
-
-If you plan on using GDB to debug your shell lab, we need to do a little configuration. Normally, GDB "catches" the same signals your shell is supposed to catch. This stops execution and returns control to GDB when those signals occur. This means you can't just set a breakpoint in your signal handlers and expect to have the debugger notice that. 
-
-To get around this, we will use a [`.gdbinit`](.gdbinit) file which is contained in this Git repo. By default, `gdb` will not read a local `.gdbinit` file because of security concerns. We can override that by adding an option to the `.gdbinit` file in your home directory to enable loading any gdbinit file.
-
-To do this, cut and paste the following line into a Terminal window
-
-```
-echo "set auto-load safe-path /" >> ~/.gdbinit
-```
-
-Following this, the local `.gdbinit` shoudld be loaded. If you want to change the local `.gdbinit` you can learn more about the signal configurations [at this GDB manual](https://sourceware.org/gdb/current/onlinedocs/gdb/Signals.html).
+In the correct directory, with these files, all one must do is type 'python shellAutograder.py' to test every single one of the trace.txt files. Our shell passes 14/16 of the traces, giving us a 100% on the project.
